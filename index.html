@@ -381,3 +381,24 @@ async function copyTask(){
 </body>
 
 </html>
+<script>
+
+function jarvisChatGPT() {
+
+  const frage = document.getElementById("task").value.trim();
+
+  if (!frage) {
+
+    alert("Bitte zuerst eine Frage eingeben oder diktieren.");
+
+    return;
+
+  }
+
+  const url = "https://chatgpt.com/?q=" + encodeURIComponent(frage);
+
+  window.open(url, "_blank");
+
+}
+
+</script>
