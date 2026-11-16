@@ -22,9 +22,7 @@ body{margin:0;background:radial-gradient(ellipse at 50% 0,#17496a,#071827 48%,#0
 
 main{max-width:620px;margin:auto;padding:22px 16px 110px}
 
-header,.between{display:flex;align-items:center;justify-content:space-between;gap:10px}
-
-header{font-size:11px;letter-spacing:1.5px;color:#8cdeff}
+header{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;letter-spacing:1.5px;color:#8cdeff}
 
 .online{color:#8df0c1}
 
@@ -126,7 +124,7 @@ a{color:#a8e5ff}
 
 <h2>🎙️ SPRACHSTEUERUNG</h2>
 
-<p class="muted">Sage „Hallo“, „Uhrzeit“, „Datum“, „Notiz“, „Aufgabe“, „Timer fünf Minuten“ oder stelle eine freie Frage. Freie Fragen werden für ChatGPT vorbereitet.</p>
+<p class="muted">Sage „Hallo“, „Uhrzeit“, „Datum“, „Notiz“, „Aufgabe“ oder stelle eine freie Frage.</p>
 
 <div class="row">
 
@@ -170,7 +168,7 @@ a{color:#a8e5ff}
 
 </div>
 
-<p class="muted">Der Button öffnet ChatGPT und versucht, die Frage zu kopieren. Dort kannst du sie einfügen und den Sprachmodus einschalten. Keine direkte KI-Anbindung.</p>
+<p class="muted">Für echte KI-Antworten öffne ChatGPT und starte dort den Sprachmodus. Keine direkte KI-Anbindung.</p>
 
 </section>
 
@@ -178,7 +176,7 @@ a{color:#a8e5ff}
 
 <h2>📝 MEINE NOTIZEN</h2>
 
-<textarea id="notes" placeholder="Deine privaten Notizen auf diesem Gerät …"></textarea>
+<textarea id="notes" placeholder="Deine Notizen …"></textarea>
 
 <div class="row">
 
@@ -187,8 +185,6 @@ a{color:#a8e5ff}
 <button id="clearNotes" class="secondary">Löschen</button>
 
 </div>
-
-<p class="muted">Notizen bleiben nur in diesem Browser auf diesem Gerät gespeichert.</p>
 
 </section>
 
@@ -222,7 +218,7 @@ a{color:#a8e5ff}
 
 </div>
 
-<p id="timerInfo" class="muted">Kein Timer aktiv. Der Timer funktioniert nur, solange die Seite aktiv bleibt.</p>
+<p id="timerInfo" class="muted">Kein Timer aktiv. Die Seite muss aktiv bleiben.</p>
 
 </section>
 
@@ -230,37 +226,11 @@ a{color:#a8e5ff}
 
 <h2>📜 LETZTE FRAGEN</h2>
 
-<ul id="history">
-
-<li>Noch keine Fragen in dieser Sitzung.</li>
-
-</ul>
+<ul id="history"><li>Noch keine Fragen.</li></ul>
 
 </section>
 
-<section class="panel">
-
-<h2>⚙️ SYSTEMINFO</h2>
-
-<p class="muted">
-
-✓ Kostenloses Kontrollzentrum ohne API-Schlüssel<br>
-
-✓ Sprache und Sprachausgabe, falls vom Browser unterstützt<br>
-
-✓ Aufgaben und Notizen lokal gespeichert<br>
-
-✓ KI-Dienste verlinkt<br>
-
-○ Keine automatische Steuerung anderer iPhone-Apps<br>
-
-○ Keine eigenen KI-Antworten ohne KI-Dienst
-
-</p>
-
-</section>
-
-<footer>JARVIS CONTROL V1000 · Keine Passwörter in öffentliche GitHub-Dateien eintragen.</footer>
+<footer>JARVIS CONTROL V1000 · Kostenlos · Ohne API-Schlüssel</footer>
 
 </main>
 
@@ -272,7 +242,7 @@ a{color:#a8e5ff}
 
 const $ = id => document.getElementById(id);
 
-const status = msg => { $('status').textContent = msg; };
+const status = msg => $('status').textContent = msg;
 
 function speak(msg) {
 
@@ -290,7 +260,7 @@ function speak(msg) {
 
   u.lang = 'de-DE';
 
-  u.rate = .92;
+  u.rate = 0.92;
 
   speechSynthesis.speak(u);
 
@@ -354,11 +324,11 @@ async function copyQuestion() {
 
     await navigator.clipboard.writeText(q);
 
-    status('✓ Frage kopiert. In ChatGPT einfügen.');
+    status('Frage kopiert. In ChatGPT einfügen.');
 
   } catch {
 
-    status('Bitte Frage markieren und manuell kopieren.');
+    status('Bitte die Frage manuell kopieren.');
 
   }
 
@@ -371,8 +341,6 @@ $('ask').onclick = () => {
   if (!q) {
 
     status('Bitte zuerst eine Frage eingeben.');
-
-    $('question').focus();
 
     return;
 
@@ -462,8 +430,6 @@ function renderTasks() {
 
     del.className = 'secondary';
 
-    del.setAttribute('aria-label','Aufgabe löschen');
-
     del.onclick = () => {
 
       tasks.splice(i,1);
@@ -544,7 +510,7 @@ $('saveNotes').onclick = () => {
 
     localStorage.setItem('jarvis1000_notes',$('notes').value);
 
-    status('✓ Notizen gespeichert.');
+    status('Notizen gespeichert.');
 
   } catch {
 
@@ -572,8 +538,6 @@ $('clearNotes').onclick = () => {
 
 };
 
-let timerEnd = 0;
-
 let timerHandle = null;
 
 function stopTimer() {
@@ -581,8 +545,6 @@ function stopTimer() {
   if (timerHandle) clearInterval(timerHandle);
 
   timerHandle = null;
-
-  timerEnd = 0;
 
   $('timerInfo').textContent = 'Kein Timer aktiv.';
 
@@ -592,7 +554,7 @@ function startTimer(n) {
 
   if (!Number.isFinite(n) || n < 1 || n > 240) {
 
-    status('Timer: 1 bis 240 Minuten wählen.');
+    status('Bitte 1 bis 240 Minuten wählen.');
 
     return;
 
@@ -600,11 +562,11 @@ function startTimer(n) {
 
   stopTimer();
 
-  timerEnd = Date.now() + n * 60000;
+  const end = Date.now() + n * 60000;
 
   function update() {
 
-    const left = Math.max(0,Math.ceil((timerEnd-Date.now())/1000));
+    const left = Math.max(0,Math.ceil((end-Date.now())/1000));
 
     $('timerInfo').textContent =
 
@@ -616,7 +578,7 @@ function startTimer(n) {
 
       stopTimer();
 
-      status('⏱️ Timer abgelaufen!');
+      status('Timer abgelaufen!');
 
       speak('Dein Timer ist abgelaufen.');
 
@@ -646,7 +608,7 @@ function listen() {
 
   if (!R) {
 
-    status('Spracherkennung nicht unterstützt. Nutze das Mikrofon der iPhone-Tastatur.');
+    status('Spracherkennung nicht unterstützt. Nutze das iPhone-Tastaturmikrofon.');
 
     return;
 
@@ -708,7 +670,7 @@ function listen() {
 
       $('notes').value += ($('notes').value ? '\n' : '') + text;
 
-      status('Notiz übernommen. Tippe auf Speichern.');
+      status('Notiz übernommen. Bitte speichern.');
 
       speak('Notiz übernommen.');
 
@@ -722,31 +684,13 @@ function listen() {
 
     }
 
-    else if (c.includes('timer')) {
-
-      const match = c.match(/(\d+)\s*minut/);
-
-      if (match) {
-
-        startTimer(Number(match[1]));
-
-        speak('Timer gestartet.');
-
-      } else {
-
-        status('Bitte Timer-Minuten unten eingeben.');
-
-      }
-
-    }
-
     else {
 
       $('question').value = spoken;
 
       remember(spoken);
 
-      status('Frage notiert. Tippe auf Mit ChatGPT besprechen.');
+      status('Frage notiert. Öffne ChatGPT für die Antwort.');
 
       speak('Ich habe deine Frage notiert. Öffne ChatGPT für die Antwort.');
 
@@ -754,7 +698,7 @@ function listen() {
 
   };
 
-  r.onerror = e => status('Spracherkennung: ' + e.error);
+  r.onerror = e => status('Mikrofonfehler: ' + e.error);
 
   r.onend = () => {
 
