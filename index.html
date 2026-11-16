@@ -8,15 +8,87 @@
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 
-<meta name="theme-color" content="#06111e">
+<meta name="theme-color" content="#061523">
 
-<title>JARVIS CONTROL</title>
+<title>JARVIS V1000</title>
 
 <style>
 
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(circle at 50% 0%,#174669,#071725 55%,#02070d);color:#e8f8ff;font:16px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:580px;margin:auto;padding:24px 16px 120px}header{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:11px;letter-spacing:1.4px;color:#8bdcff}.online{color:#87ebbd}.orb{width:165px;height:165px;border:2px solid #5ad0ff;border-radius:50%;margin:30px auto 18px;display:grid;place-items:center;font-size:72px;color:#b2edff;box-shadow:0 0 35px #008cff77,inset 0 0 30px #008cff55;animation:pulse 4s ease-in-out infinite}@keyframes pulse{50%{box-shadow:0 0 55px #00b7ff99,inset 0 0 42px #008cff77}}h1{text-align:center;letter-spacing:5px;margin:0;font-size:27px}.subtitle{text-align:center;color:#acc9da;font-size:13px;line-height:1.5}.panel{margin-top:20px;padding:17px;border:1px solid #2b6081;border-radius:17px;background:#0a2236dc}h2{margin:0 0 14px;color:#8edbff;letter-spacing:1.4px;font-size:13px}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.services a{background:#153a55;border:1px solid #316b8c;border-radius:12px;padding:18px 3px;text-align:center;text-decoration:none;color:white;font-size:13px;font-weight:700;line-height:1.7}.services a span{font-size:25px}textarea{width:100%;min-height:112px;border-radius:12px;padding:13px;background:#061522;color:white;border:1px solid #397495;font:inherit;resize:vertical}button{border:0;border-radius:12px;padding:13px 15px;background:#35b9f4;color:#041b29;font-size:14px;font-weight:700;cursor:pointer}button:active{opacity:.85}.secondary{background:#17445f;color:#e5f7ff}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:11px}.actions button{flex:1 1 160px}.small{font-size:12px;color:#b1cbdb;line-height:1.6}#feedback{color:#a7e6ff;min-height:20px}#history{margin:8px 0 0;padding-left:20px;color:#b7d9ea;font-size:13px;overflow-wrap:anywhere}#history li{margin-bottom:7px}.mic{position:fixed;bottom:max(18px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(92%,380px);z-index:10;border-radius:40px;padding:17px;background:#068dce;color:white;border:1px solid #8ce3ff;box-shadow:0 0 24px #00aaff66}.mic.listening{background:#c04450}footer{text-align:center;color:#7796a8;font-size:11px;margin:26px 0 0}a{color:#9be0ff}
+*{box-sizing:border-box}
+
+body{margin:0;background:radial-gradient(ellipse at 50% 0,#17496a,#071827 48%,#030910);color:#e9f8ff;font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+
+main{max-width:620px;margin:auto;padding:22px 16px 110px}
+
+header,.between{display:flex;align-items:center;justify-content:space-between;gap:10px}
+
+header{font-size:11px;letter-spacing:1.5px;color:#8cdeff}
+
+.online{color:#8df0c1}
+
+.orb{height:160px;width:160px;border:2px solid #6ad7ff;border-radius:50%;margin:28px auto 18px;display:grid;place-items:center;font-size:70px;color:#b8f1ff;box-shadow:0 0 40px #009fff77,inset 0 0 35px #009fff55;animation:pulse 3.5s infinite alternate}
+
+@keyframes pulse{to{box-shadow:0 0 65px #00bfffaa,inset 0 0 50px #009fff77}}
+
+h1{text-align:center;letter-spacing:5px;margin:0;font-size:27px}
+
+.sub{text-align:center;color:#a7c7d9;font-size:13px}
+
+.panel{border:1px solid #286183;background:#0b2539e8;border-radius:17px;padding:17px;margin-top:18px}
+
+h2{font-size:13px;color:#89dfff;letter-spacing:1.3px;margin:0 0 12px}
+
+.muted{font-size:12px;color:#b5cbd9;line-height:1.6}
+
+.row{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}
+
+.row>*{flex:1 1 140px}
+
+button,.linkbtn{display:inline-block;border:0;border-radius:12px;padding:13px 12px;background:#39baf3;color:#042032;font-weight:750;font-size:14px;text-align:center;text-decoration:none;cursor:pointer}
+
+.secondary{background:#194861;color:#e9f8ff}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+
+.services a{background:#153b55;border:1px solid #316b8c;border-radius:12px;padding:17px 4px;color:#fff;text-decoration:none;text-align:center;font-size:13px;font-weight:700}
+
+textarea,input{width:100%;padding:12px;border:1px solid #397a9a;border-radius:11px;background:#051723;color:#fff;font:inherit}
+
+textarea{min-height:100px;resize:vertical}
+
+input{min-width:0}
+
+.field{margin-top:10px}
+
+.clock{font-size:30px;text-align:center;font-weight:750;color:#b5ecff;letter-spacing:2px}
+
+.center{text-align:center}
+
+#status{color:#a9e7ff;min-height:18px}
+
+ul{padding-left:21px}
+
+li{margin:8px 0;overflow-wrap:anywhere}
+
+.taskline{display:flex;align-items:center;gap:9px}
+
+.taskline input{width:auto}
+
+.taskline span{flex:1}
+
+.taskline button{padding:6px 10px}
+
+.done{text-decoration:line-through;opacity:.55}
+
+#mic{position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(92%,400px);border-radius:36px;background:#008fcf;color:#fff;border:1px solid #8fe9ff;box-shadow:0 0 25px #00baff66;z-index:20}
+
+#mic.active{background:#bd4251}
+
+footer{text-align:center;color:#779caf;font-size:11px;margin:25px 0}
+
+a{color:#a8e5ff}
 
 </style>
 
@@ -26,167 +98,695 @@
 
 <main>
 
-<header><span>JARVIS / CONTROL</span><span class="online">● SYSTEM BEREIT</span></header>
+<header>
+
+<span>JARVIS / V1000</span>
+
+<span class="online">● LOKAL BEREIT</span>
+
+</header>
 
 <div class="orb" aria-hidden="true">J</div>
 
 <h1>J.A.R.V.I.S.</h1>
 
-<p class="subtitle">Deine persönliche KI-Steuerzentrale · Kostenlos · Ohne API-Schlüssel</p>
+<p class="sub">Deine persönliche KI-Steuerzentrale · iPhone Edition</p>
 
-<section class="panel"><h2>KI-SYSTEME</h2><div class="services"><a href="https://chatgpt.com/" target="_blank" rel="noopener"><span>✳</span><br>ChatGPT</a><a href="https://claude.ai/" target="_blank" rel="noopener"><span>✺</span><br>Claude</a><a href="https://gemini.google.com/" target="_blank" rel="noopener"><span>✦</span><br>Gemini</a></div></section>
+<section class="panel">
 
-<section class="panel"><h2>🎙️ SPRACHSTEUERUNG</h2><p class="small">Tippe unten auf das Mikrofon. Sage z. B. „Hallo“, „Uhrzeit“, „Datum“, „Öffne ChatGPT“ oder eine beliebige Frage. Freie Fragen landen im Textfeld.</p><div class="actions"><button class="secondary" type="button" id="greeting">🔊 Begrüßung</button><button class="secondary" type="button" id="stopVoice">🔇 Stimme stoppen</button></div><p id="feedback" role="status" aria-live="polite">JARVIS ist bereit.</p></section>
+<h2>◉ SYSTEMZEIT</h2>
 
-<section class="panel"><h2>🧠 FRAGE AN KI VORBEREITEN</h2><label for="task" class="small">Frage sprechen, diktieren oder eintippen:</label><textarea id="task" placeholder="Zum Beispiel: Plane meinen morgigen Tag und erstelle eine Checkliste."></textarea><div class="actions"><button type="button" id="sendChat">🧠 Mit ChatGPT besprechen</button><button type="button" id="copyTask" class="secondary">📋 Frage kopieren</button><button type="button" id="clearTask" class="secondary">✕ Text löschen</button></div><p class="small">Der ChatGPT-Button versucht, deine Frage zu kopieren und öffnet ChatGPT. Füge sie dort bei Bedarf über „Einfügen“ ein. JARVIS erhält die KI-Antwort nicht automatisch zurück.</p></section>
+<div class="clock" id="clock">--:--:--</div>
 
-<section class="panel"><h2>📜 LETZTE FRAGEN</h2><ol id="history"><li>Noch keine Fragen in dieser Sitzung.</li></ol><p class="small">Der Verlauf bleibt nur während dieser geöffneten Sitzung erhalten.</p></section>
+<p class="muted center" id="date"></p>
 
-<section class="panel"><h2>⚙️ SYSTEMSTATUS</h2><p class="small">✓ Steuerzentrale geladen<br>✓ ChatGPT, Claude und Gemini verlinkt<br>✓ Deutsche Sprachausgabe, falls vom Browser unterstützt<br>✓ Spracherkennung, falls vom Browser unterstützt<br>○ Keine direkte KI-Anbindung ohne zusätzlichen Dienst</p></section>
+</section>
 
-<footer>JARVIS CONTROL V5 · PRIVATE STARTVERSION<br>Keine Passwörter oder API-Schlüssel in öffentliche GitHub-Dateien eintragen.</footer>
+<section class="panel">
+
+<h2>🎙️ SPRACHSTEUERUNG</h2>
+
+<p class="muted">Sage „Hallo“, „Uhrzeit“, „Datum“, „Notiz“, „Aufgabe“, „Timer fünf Minuten“ oder stelle eine freie Frage. Freie Fragen werden für ChatGPT vorbereitet.</p>
+
+<div class="row">
+
+<button id="greet" class="secondary">🔊 Begrüßung</button>
+
+<button id="stopSpeech" class="secondary">🔇 Stimme stoppen</button>
+
+</div>
+
+<p id="status" role="status" aria-live="polite">JARVIS ist bereit.</p>
+
+</section>
+
+<section class="panel">
+
+<h2>🧠 KI-GESPRÄCHE</h2>
+
+<div class="services">
+
+<a href="https://chatgpt.com/" target="_blank" rel="noopener">✳<br>ChatGPT</a>
+
+<a href="https://claude.ai/" target="_blank" rel="noopener">✺<br>Claude</a>
+
+<a href="https://gemini.google.com/" target="_blank" rel="noopener">✦<br>Gemini</a>
+
+</div>
+
+<div class="field">
+
+<textarea id="question" placeholder="Sprich oder schreibe deine Frage …"></textarea>
+
+</div>
+
+<div class="row">
+
+<button id="ask">🧠 Mit ChatGPT besprechen</button>
+
+<button id="copy" class="secondary">📋 Frage kopieren</button>
+
+<button id="clear" class="secondary">✕ Leeren</button>
+
+</div>
+
+<p class="muted">Der Button öffnet ChatGPT und versucht, die Frage zu kopieren. Dort kannst du sie einfügen und den Sprachmodus einschalten. Keine direkte KI-Anbindung.</p>
+
+</section>
+
+<section class="panel">
+
+<h2>📝 MEINE NOTIZEN</h2>
+
+<textarea id="notes" placeholder="Deine privaten Notizen auf diesem Gerät …"></textarea>
+
+<div class="row">
+
+<button id="saveNotes">💾 Notizen speichern</button>
+
+<button id="clearNotes" class="secondary">Löschen</button>
+
+</div>
+
+<p class="muted">Notizen bleiben nur in diesem Browser auf diesem Gerät gespeichert.</p>
+
+</section>
+
+<section class="panel">
+
+<h2>☑️ AUFGABEN</h2>
+
+<div class="row">
+
+<input id="newTask" placeholder="Neue Aufgabe …" aria-label="Neue Aufgabe">
+
+<button id="addTask">+ Hinzufügen</button>
+
+</div>
+
+<ul id="tasks"></ul>
+
+</section>
+
+<section class="panel">
+
+<h2>⏱️ TIMER</h2>
+
+<div class="row">
+
+<input id="minutes" type="number" min="1" max="240" value="5" aria-label="Minuten">
+
+<button id="startTimer">Timer starten</button>
+
+<button id="cancelTimer" class="secondary">Stoppen</button>
+
+</div>
+
+<p id="timerInfo" class="muted">Kein Timer aktiv. Der Timer funktioniert nur, solange die Seite aktiv bleibt.</p>
+
+</section>
+
+<section class="panel">
+
+<h2>📜 LETZTE FRAGEN</h2>
+
+<ul id="history">
+
+<li>Noch keine Fragen in dieser Sitzung.</li>
+
+</ul>
+
+</section>
+
+<section class="panel">
+
+<h2>⚙️ SYSTEMINFO</h2>
+
+<p class="muted">
+
+✓ Kostenloses Kontrollzentrum ohne API-Schlüssel<br>
+
+✓ Sprache und Sprachausgabe, falls vom Browser unterstützt<br>
+
+✓ Aufgaben und Notizen lokal gespeichert<br>
+
+✓ KI-Dienste verlinkt<br>
+
+○ Keine automatische Steuerung anderer iPhone-Apps<br>
+
+○ Keine eigenen KI-Antworten ohne KI-Dienst
+
+</p>
+
+</section>
+
+<footer>JARVIS CONTROL V1000 · Keine Passwörter in öffentliche GitHub-Dateien eintragen.</footer>
 
 </main>
 
-<button id="mic" class="mic" type="button">🎙️ Mit JARVIS sprechen</button>
+<button id="mic" type="button">🎙️ Mit JARVIS sprechen</button>
 
 <script>
 
 'use strict';
 
-const task = document.getElementById('task');
+const $ = id => document.getElementById(id);
 
-const feedback = document.getElementById('feedback');
+const status = msg => { $('status').textContent = msg; };
 
-const mic = document.getElementById('mic');
+function speak(msg) {
 
-const historyEl = document.getElementById('history');
+  if (!('speechSynthesis' in window)) {
 
-const questions = [];
+    status('Sprachausgabe nicht verfügbar.');
 
-let currentRecognition = null;
+    return;
 
-function status(message){feedback.textContent=message;}
+  }
 
-function say(message){
+  speechSynthesis.cancel();
 
-  if(!('speechSynthesis' in window)){status('Sprachausgabe wird von diesem Browser nicht unterstützt.');return;}
+  const u = new SpeechSynthesisUtterance(msg);
 
-  window.speechSynthesis.cancel();
+  u.lang = 'de-DE';
 
-  const utterance = new SpeechSynthesisUtterance(message);
+  u.rate = .92;
 
-  utterance.lang='de-DE';utterance.rate=0.92;
-
-  window.speechSynthesis.speak(utterance);
+  speechSynthesis.speak(u);
 
 }
 
-function addQuestion(question){
+function tick() {
 
-  if(!question)return;
+  const now = new Date();
 
-  questions.unshift(question);
+  $('clock').textContent = now.toLocaleTimeString('de-DE');
 
-  if(questions.length>5)questions.pop();
+  $('date').textContent = now.toLocaleDateString('de-DE', {
 
-  historyEl.replaceChildren();
+    weekday:'long',day:'numeric',month:'long',year:'numeric'
 
-  questions.forEach(q=>{const li=document.createElement('li');li.textContent=q;historyEl.appendChild(li);});
-
-}
-
-function currentQuestion(){return task.value.trim();}
-
-async function copyQuestion(){
-
-  const question=currentQuestion();
-
-  if(!question){status('Bitte zuerst eine Frage eingeben oder sprechen.');return false;}
-
-  try{await navigator.clipboard.writeText(question);status('✓ Frage kopiert. Du kannst sie in ChatGPT einfügen.');return true;}
-
-  catch(e){status('Automatisches Kopieren nicht möglich. Bitte Frage im Textfeld markieren und manuell kopieren.');return false;}
+  });
 
 }
 
-async function openChatGPT(){
+tick();
 
-  const question=currentQuestion();
+setInterval(tick,1000);
 
-  if(!question){status('Bitte zuerst eine Frage eingeben oder sprechen.');task.focus();return;}
+const history = [];
 
-  addQuestion(question);
+function remember(q) {
 
-  // Neues Fenster direkt durch den Klick öffnen, damit iOS es nicht als Popup blockiert.
+  if (!q) return;
 
-  const opened=window.open('https://chatgpt.com/','_blank','noopener');
+  history.unshift(q);
 
-  await copyQuestion();
+  history.splice(5);
 
-  if(opened===null)status('Falls ChatGPT nicht geöffnet wurde, nutze oben den ChatGPT-Link. Kopiere deine Frage und füge sie dort ein.');
+  $('history').replaceChildren();
+
+  history.forEach(x => {
+
+    const li = document.createElement('li');
+
+    li.textContent = x;
+
+    $('history').append(li);
+
+  });
 
 }
 
-function finishListening(){mic.classList.remove('listening');mic.textContent='🎙️ Mit JARVIS sprechen';currentRecognition=null;}
+async function copyQuestion() {
 
-function listen(){
+  const q = $('question').value.trim();
 
-  const Recognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if (!q) {
 
-  if(!Recognition){status('Spracherkennung wird hier nicht unterstützt. Nutze das Mikrofon der iPhone-Tastatur im Textfeld.');return;}
+    status('Bitte zuerst eine Frage eingeben.');
 
-  if(currentRecognition){currentRecognition.stop();return;}
+    return;
 
-  const recognition=new Recognition();currentRecognition=recognition;
+  }
 
-  recognition.lang='de-DE';recognition.interimResults=false;recognition.maxAlternatives=1;
+  try {
 
-  recognition.onresult=event=>{
+    await navigator.clipboard.writeText(q);
 
-    const spoken=event.results[0][0].transcript.trim();
+    status('✓ Frage kopiert. In ChatGPT einfügen.');
 
-    const command=spoken.toLocaleLowerCase('de-DE');
+  } catch {
 
-    status('Erkannt: '+spoken);
+    status('Bitte Frage markieren und manuell kopieren.');
 
-    if(command.includes('hallo'))say('Hallo! JARVIS ist bereit.');
+  }
 
-    else if(command.includes('wie spät')||command.includes('uhrzeit'))say('Es ist '+new Date().toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'})+' Uhr.');
+}
 
-    else if(command.includes('datum')||command.includes('welcher tag'))say('Heute ist '+new Date().toLocaleDateString('de-DE',{weekday:'long',day:'numeric',month:'long',year:'numeric'})+'.');
+$('ask').onclick = () => {
 
-    else if(command.includes('öffne chatgpt')||command.includes('starte chatgpt')){say('Öffne ChatGPT über die Schaltfläche oben.');status('Tippe oben auf ChatGPT, um es zu öffnen.');}
+  const q = $('question').value.trim();
 
-    else if(command.includes('öffne claude')){say('Öffne Claude über die Schaltfläche oben.');}
+  if (!q) {
 
-    else if(command.includes('öffne gemini')){say('Öffne Gemini über die Schaltfläche oben.');}
+    status('Bitte zuerst eine Frage eingeben.');
 
-    else{task.value=spoken;addQuestion(spoken);status('✓ Frage übernommen. Tippe auf „Mit ChatGPT besprechen“.');say('Ich habe deine Frage notiert. Du kannst sie jetzt mit ChatGPT besprechen.');}
+    $('question').focus();
+
+    return;
+
+  }
+
+  remember(q);
+
+  window.open('https://chatgpt.com/','_blank');
+
+  void copyQuestion();
+
+};
+
+$('copy').onclick = () => void copyQuestion();
+
+$('clear').onclick = () => {
+
+  $('question').value = '';
+
+  status('Frage gelöscht.');
+
+};
+
+$('greet').onclick = () =>
+
+  speak('Guten Tag. Ich bin Jarvis Version eintausend. Deine Steuerzentrale ist bereit.');
+
+$('stopSpeech').onclick = () => {
+
+  if ('speechSynthesis' in window) speechSynthesis.cancel();
+
+  status('Stimme gestoppt.');
+
+};
+
+function loadTasks() {
+
+  try {
+
+    return JSON.parse(localStorage.getItem('jarvis1000_tasks') || '[]');
+
+  } catch {
+
+    return [];
+
+  }
+
+}
+
+let tasks = loadTasks();
+
+function renderTasks() {
+
+  $('tasks').replaceChildren();
+
+  tasks.forEach((t,i) => {
+
+    const li = document.createElement('li');
+
+    const line = document.createElement('div');
+
+    const check = document.createElement('input');
+
+    const span = document.createElement('span');
+
+    const del = document.createElement('button');
+
+    line.className = 'taskline';
+
+    check.type = 'checkbox';
+
+    check.checked = !!t.done;
+
+    check.onchange = () => {
+
+      tasks[i].done = check.checked;
+
+      saveTasks();
+
+    };
+
+    span.textContent = t.text;
+
+    if (t.done) span.className = 'done';
+
+    del.textContent = '✕';
+
+    del.className = 'secondary';
+
+    del.setAttribute('aria-label','Aufgabe löschen');
+
+    del.onclick = () => {
+
+      tasks.splice(i,1);
+
+      saveTasks();
+
+    };
+
+    line.append(check,span,del);
+
+    li.append(line);
+
+    $('tasks').append(li);
+
+  });
+
+  if (!tasks.length) {
+
+    const li = document.createElement('li');
+
+    li.textContent = 'Noch keine Aufgaben.';
+
+    $('tasks').append(li);
+
+  }
+
+}
+
+function saveTasks() {
+
+  try {
+
+    localStorage.setItem('jarvis1000_tasks',JSON.stringify(tasks));
+
+  } catch {
+
+    status('Aufgaben konnten nicht gespeichert werden.');
+
+  }
+
+  renderTasks();
+
+}
+
+function addTask(text) {
+
+  text = text.trim();
+
+  if (!text) return;
+
+  tasks.push({text,done:false});
+
+  saveTasks();
+
+  $('newTask').value = '';
+
+}
+
+$('addTask').onclick = () => addTask($('newTask').value);
+
+$('newTask').onkeydown = e => {
+
+  if (e.key === 'Enter') addTask($('newTask').value);
+
+};
+
+renderTasks();
+
+try {
+
+  $('notes').value = localStorage.getItem('jarvis1000_notes') || '';
+
+} catch {}
+
+$('saveNotes').onclick = () => {
+
+  try {
+
+    localStorage.setItem('jarvis1000_notes',$('notes').value);
+
+    status('✓ Notizen gespeichert.');
+
+  } catch {
+
+    status('Notizen konnten nicht gespeichert werden.');
+
+  }
+
+};
+
+$('clearNotes').onclick = () => {
+
+  if (confirm('Notizen wirklich löschen?')) {
+
+    $('notes').value = '';
+
+    try {
+
+      localStorage.removeItem('jarvis1000_notes');
+
+    } catch {}
+
+    status('Notizen gelöscht.');
+
+  }
+
+};
+
+let timerEnd = 0;
+
+let timerHandle = null;
+
+function stopTimer() {
+
+  if (timerHandle) clearInterval(timerHandle);
+
+  timerHandle = null;
+
+  timerEnd = 0;
+
+  $('timerInfo').textContent = 'Kein Timer aktiv.';
+
+}
+
+function startTimer(n) {
+
+  if (!Number.isFinite(n) || n < 1 || n > 240) {
+
+    status('Timer: 1 bis 240 Minuten wählen.');
+
+    return;
+
+  }
+
+  stopTimer();
+
+  timerEnd = Date.now() + n * 60000;
+
+  function update() {
+
+    const left = Math.max(0,Math.ceil((timerEnd-Date.now())/1000));
+
+    $('timerInfo').textContent =
+
+      'Verbleibend: ' + Math.floor(left/60) +
+
+      ' min ' + String(left%60).padStart(2,'0') + ' s';
+
+    if (left === 0) {
+
+      stopTimer();
+
+      status('⏱️ Timer abgelaufen!');
+
+      speak('Dein Timer ist abgelaufen.');
+
+    }
+
+  }
+
+  update();
+
+  timerHandle = setInterval(update,1000);
+
+  status('Timer gestartet.');
+
+}
+
+$('startTimer').onclick = () =>
+
+  startTimer(Number($('minutes').value));
+
+$('cancelTimer').onclick = stopTimer;
+
+let recognition = null;
+
+function listen() {
+
+  const R = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  if (!R) {
+
+    status('Spracherkennung nicht unterstützt. Nutze das Mikrofon der iPhone-Tastatur.');
+
+    return;
+
+  }
+
+  if (recognition) {
+
+    recognition.stop();
+
+    return;
+
+  }
+
+  const r = new R();
+
+  recognition = r;
+
+  r.lang = 'de-DE';
+
+  r.interimResults = false;
+
+  r.onresult = e => {
+
+    const spoken = e.results[0][0].transcript.trim();
+
+    const c = spoken.toLocaleLowerCase('de-DE');
+
+    status('Erkannt: ' + spoken);
+
+    if (/hallo|guten tag/.test(c)) {
+
+      speak('Hallo! Jarvis ist bereit.');
+
+    }
+
+    else if (/uhrzeit|wie spät/.test(c)) {
+
+      speak('Es ist ' + new Date().toLocaleTimeString('de-DE',{
+
+        hour:'2-digit',minute:'2-digit'
+
+      }) + ' Uhr.');
+
+    }
+
+    else if (/datum|welcher tag/.test(c)) {
+
+      speak('Heute ist ' + new Date().toLocaleDateString('de-DE',{
+
+        dateStyle:'full'
+
+      }));
+
+    }
+
+    else if (c.startsWith('notiz ')) {
+
+      const text = spoken.slice(6).trim();
+
+      $('notes').value += ($('notes').value ? '\n' : '') + text;
+
+      status('Notiz übernommen. Tippe auf Speichern.');
+
+      speak('Notiz übernommen.');
+
+    }
+
+    else if (c.startsWith('aufgabe ')) {
+
+      addTask(spoken.slice(8));
+
+      speak('Aufgabe hinzugefügt.');
+
+    }
+
+    else if (c.includes('timer')) {
+
+      const match = c.match(/(\d+)\s*minut/);
+
+      if (match) {
+
+        startTimer(Number(match[1]));
+
+        speak('Timer gestartet.');
+
+      } else {
+
+        status('Bitte Timer-Minuten unten eingeben.');
+
+      }
+
+    }
+
+    else {
+
+      $('question').value = spoken;
+
+      remember(spoken);
+
+      status('Frage notiert. Tippe auf Mit ChatGPT besprechen.');
+
+      speak('Ich habe deine Frage notiert. Öffne ChatGPT für die Antwort.');
+
+    }
 
   };
 
-  recognition.onerror=event=>status('Mikrofonfehler: '+event.error+'. Prüfe die Mikrofonberechtigung.');
+  r.onerror = e => status('Spracherkennung: ' + e.error);
 
-  recognition.onend=finishListening;
+  r.onend = () => {
 
-  try{recognition.start();mic.classList.add('listening');mic.textContent='🔴 Zuhören – zum Stoppen tippen';status('🎙️ Ich höre zu …');}
+    recognition = null;
 
-  catch(e){finishListening();status('Spracherkennung konnte nicht gestartet werden.');}
+    $('mic').classList.remove('active');
+
+    $('mic').textContent = '🎙️ Mit JARVIS sprechen';
+
+  };
+
+  try {
+
+    r.start();
+
+    $('mic').classList.add('active');
+
+    $('mic').textContent = '🔴 Zuhören – stoppen';
+
+    status('Ich höre zu …');
+
+  } catch {
+
+    recognition = null;
+
+    status('Mikrofon konnte nicht gestartet werden.');
+
+  }
 
 }
 
-document.getElementById('greeting').addEventListener('click',()=>say('Guten Tag. Ich bin Jarvis. Dein Kontrollzentrum ist bereit.'));
-
-document.getElementById('stopVoice').addEventListener('click',()=>{if('speechSynthesis' in window)window.speechSynthesis.cancel();status('Sprachausgabe gestoppt.');});
-
-document.getElementById('copyTask').addEventListener('click',()=>{void copyQuestion();});
-
-document.getElementById('sendChat').addEventListener('click',()=>{void openChatGPT();});
-
-document.getElementById('clearTask').addEventListener('click',()=>{task.value='';status('Textfeld geleert.');task.focus();});
-
-mic.addEventListener('click',listen);
+$('mic').onclick = listen;
 
 </script>
 
