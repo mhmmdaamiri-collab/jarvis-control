@@ -12,81 +12,79 @@
 
 <meta name="theme-color" content="#061523">
 
-<title>JARVIS V1000</title>
+<title>JARVIS V5000 ULTIMATE</title>
 
 <style>
 
 *{box-sizing:border-box}
 
-body{margin:0;background:radial-gradient(ellipse at 50% 0,#17496a,#071827 48%,#030910);color:#e9f8ff;font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{margin:0;background:radial-gradient(ellipse at 50% 0,#16486b,#071725 55%,#02070e);color:#eaf8ff;font:15px -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
 
-main{max-width:620px;margin:auto;padding:22px 16px 110px}
+main{max-width:620px;margin:auto;padding:20px 15px 115px}
 
-header{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:11px;letter-spacing:1.5px;color:#8cdeff}
+header{display:flex;justify-content:space-between;gap:10px;font-size:11px;letter-spacing:1.3px;color:#92dcff}
 
-.online{color:#8df0c1}
+.online{color:#88edbb}
 
-.orb{height:160px;width:160px;border:2px solid #6ad7ff;border-radius:50%;margin:28px auto 18px;display:grid;place-items:center;font-size:70px;color:#b8f1ff;box-shadow:0 0 40px #009fff77,inset 0 0 35px #009fff55;animation:pulse 3.5s infinite alternate}
+.orb{height:155px;width:155px;margin:25px auto 15px;border:2px solid #62d8ff;border-radius:50%;display:grid;place-items:center;font-size:68px;color:#b4efff;box-shadow:0 0 45px #009dff88,inset 0 0 35px #009dff55;animation:pulse 3s infinite alternate}
 
-@keyframes pulse{to{box-shadow:0 0 65px #00bfffaa,inset 0 0 50px #009fff77}}
+@keyframes pulse{to{box-shadow:0 0 70px #00c3ffbb,inset 0 0 45px #009dff77}}
 
-h1{text-align:center;letter-spacing:5px;margin:0;font-size:27px}
+h1{text-align:center;letter-spacing:4px;margin:0;font-size:27px}
 
-.sub{text-align:center;color:#a7c7d9;font-size:13px}
+.sub{text-align:center;color:#a9c7d7;font-size:12px}
 
-.panel{border:1px solid #286183;background:#0b2539e8;border-radius:17px;padding:17px;margin-top:18px}
+.panel{margin-top:17px;padding:16px;border:1px solid #286184;border-radius:16px;background:#0a2439e8}
 
-h2{font-size:13px;color:#89dfff;letter-spacing:1.3px;margin:0 0 12px}
+h2{margin:0 0 12px;color:#8cddff;font-size:13px;letter-spacing:1px}
 
-.muted{font-size:12px;color:#b5cbd9;line-height:1.6}
+p{line-height:1.5}
+
+.small{font-size:12px;color:#b6cddb}
 
 .row{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}
 
 .row>*{flex:1 1 140px}
 
-button,.linkbtn{display:inline-block;border:0;border-radius:12px;padding:13px 12px;background:#39baf3;color:#042032;font-weight:750;font-size:14px;text-align:center;text-decoration:none;cursor:pointer}
+button,.btn{border:0;border-radius:11px;background:#3bbdf5;color:#032235;padding:13px;font:700 14px -apple-system,BlinkMacSystemFont,sans-serif;text-decoration:none;text-align:center;cursor:pointer;display:inline-block}
 
-.secondary{background:#194861;color:#e9f8ff}
+.secondary{background:#19475f;color:#e8f8ff}
 
-.services{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.green{background:#44d4a2;color:#06261e}
 
-.services a{background:#153b55;border:1px solid #316b8c;border-radius:12px;padding:17px 4px;color:#fff;text-decoration:none;text-align:center;font-size:13px;font-weight:700}
+input,textarea{width:100%;background:#051723;color:white;border:1px solid #397b9c;border-radius:11px;padding:12px;font:inherit}
 
-textarea,input{width:100%;padding:12px;border:1px solid #397a9a;border-radius:11px;background:#051723;color:#fff;font:inherit}
+textarea{min-height:90px;resize:vertical}
 
-textarea{min-height:100px;resize:vertical}
+input[type=checkbox]{width:auto}
 
-input{min-width:0}
+label{display:block;margin:12px 0 5px;color:#b9d7e6;font-size:12px}
 
-.field{margin-top:10px}
-
-.clock{font-size:30px;text-align:center;font-weight:750;color:#b5ecff;letter-spacing:2px}
+.clock{text-align:center;font-size:32px;color:#b5efff;font-weight:750}
 
 .center{text-align:center}
 
-#status{color:#a9e7ff;min-height:18px}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 
-ul{padding-left:21px}
+.services a{background:#153b55;color:white;text-decoration:none;text-align:center;border:1px solid #316c8d;border-radius:11px;padding:17px 3px;font-size:13px}
 
-li{margin:8px 0;overflow-wrap:anywhere}
+li{margin:9px 0;overflow-wrap:anywhere}
 
-.taskline{display:flex;align-items:center;gap:9px}
-
-.taskline input{width:auto}
+.taskline{display:flex;align-items:center;gap:8px}
 
 .taskline span{flex:1}
 
-.taskline button{padding:6px 10px}
+.taskline button{padding:7px}
 
-.done{text-decoration:line-through;opacity:.55}
+.done{text-decoration:line-through;opacity:.6}
 
-#mic{position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(92%,400px);border-radius:36px;background:#008fcf;color:#fff;border:1px solid #8fe9ff;box-shadow:0 0 25px #00baff66;z-index:20}
+#mic{position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);width:min(92%,400px);border-radius:40px;background:#008fce;color:white;border:1px solid #8de7ff;box-shadow:0 0 25px #00baff66;z-index:10}
 
-#mic.active{background:#bd4251}
+#mic.active{background:#bc4051}
 
-footer{text-align:center;color:#779caf;font-size:11px;margin:25px 0}
+#status,#readStatus{color:#a9e7ff;font-size:13px}
 
-a{color:#a8e5ff}
+footer{text-align:center;color:#799aaf;font-size:11px;margin-top:25px}
 
 </style>
 
@@ -98,49 +96,107 @@ a{color:#a8e5ff}
 
 <header>
 
-<span>JARVIS / V1000</span>
+<span>JARVIS / V5000</span>
 
-<span class="online">● LOKAL BEREIT</span>
+<span class="online">● SYSTEM BEREIT</span>
 
 </header>
 
-<div class="orb" aria-hidden="true">J</div>
+<div class="orb">J</div>
 
 <h1>J.A.R.V.I.S.</h1>
 
-<p class="sub">Deine persönliche KI-Steuerzentrale · iPhone Edition</p>
+<p class="sub">ULTIMATE iPHONE EDITION · KOSTENLOS</p>
 
 <section class="panel">
 
 <h2>◉ SYSTEMZEIT</h2>
 
-<div class="clock" id="clock">--:--:--</div>
+<div id="clock" class="clock">--:--:--</div>
 
-<p class="muted center" id="date"></p>
+<p id="date" class="small center"></p>
 
 </section>
 
 <section class="panel">
 
-<h2>🎙️ SPRACHSTEUERUNG</h2>
+<h2>🎙️ JARVIS SPRACHSTEUERUNG</h2>
 
-<p class="muted">Sage „Hallo“, „Uhrzeit“, „Datum“, „Notiz“, „Aufgabe“ oder stelle eine freie Frage.</p>
+<p class="small">
+
+Sage „Hallo“, „Uhrzeit“, „Datum“, „Notiz Milch kaufen“,
+
+„Aufgabe Zimmer aufräumen“ oder „Öffne WhatsApp“.
+
+Für Telefon- und WhatsApp-Aktionen nutze die Felder unten.
+
+</p>
 
 <div class="row">
 
-<button id="greet" class="secondary">🔊 Begrüßung</button>
+<button id="greet">🔊 Begrüßung</button>
 
-<button id="stopSpeech" class="secondary">🔇 Stimme stoppen</button>
+<button id="stopVoice" class="secondary">🔇 Stimme stoppen</button>
 
 </div>
 
-<p id="status" role="status" aria-live="polite">JARVIS ist bereit.</p>
+<p id="status" role="status">JARVIS ist bereit.</p>
 
 </section>
 
 <section class="panel">
 
-<h2>🧠 KI-GESPRÄCHE</h2>
+<h2>📞 TELEFONIEREN</h2>
+
+<p class="small">Gib die Nummer mit Landesvorwahl ein, zum Beispiel +49…</p>
+
+<label for="phone">Telefonnummer</label>
+
+<input id="phone" type="tel" placeholder="+49…">
+
+<div class="row">
+
+<button id="call" class="green">📞 Anruf vorbereiten</button>
+
+</div>
+
+<p class="small">Dein iPhone fragt dich vor dem Anruf um Bestätigung.</p>
+
+</section>
+
+<section class="panel">
+
+<h2>💬 WHATSAPP-NACHRICHT</h2>
+
+<label for="waPhone">WhatsApp-Nummer mit Landesvorwahl</label>
+
+<input id="waPhone" type="tel" placeholder="+49…">
+
+<label for="waMessage">Nachricht</label>
+
+<textarea id="waMessage" placeholder="Hallo, wie geht es dir?"></textarea>
+
+<div class="row">
+
+<button id="openWA" class="green">💬 WhatsApp öffnen</button>
+
+<button id="shareWA" class="secondary">📤 Ohne Nummer teilen</button>
+
+</div>
+
+<p class="small">
+
+JARVIS öffnet WhatsApp mit vorbereitetem Text.
+
+Du prüfst den Empfänger und tippst selbst auf Senden.
+
+</p>
+
+</section>
+
+<section class="panel">
+
+<h2>🧠 KI-SYSTEME</h2>
 
 <div class="services">
 
@@ -152,37 +208,69 @@ a{color:#a8e5ff}
 
 </div>
 
-<div class="field">
+<label for="question">Meine Frage</label>
 
-<textarea id="question" placeholder="Sprich oder schreibe deine Frage …"></textarea>
-
-</div>
+<textarea id="question" placeholder="Stelle deine Frage …"></textarea>
 
 <div class="row">
 
-<button id="ask">🧠 Mit ChatGPT besprechen</button>
+<button id="ask">🧠 ChatGPT öffnen</button>
 
-<button id="copy" class="secondary">📋 Frage kopieren</button>
-
-<button id="clear" class="secondary">✕ Leeren</button>
+<button id="copyQuestion" class="secondary">📋 Frage kopieren</button>
 
 </div>
 
-<p class="muted">Für echte KI-Antworten öffne ChatGPT und starte dort den Sprachmodus. Keine direkte KI-Anbindung.</p>
+<p class="small">Füge die Frage bei Bedarf in ChatGPT ein.</p>
 
 </section>
 
 <section class="panel">
 
-<h2>📝 MEINE NOTIZEN</h2>
+<h2>🔊 KI-ANTWORT VORLESEN</h2>
+
+<p class="small">
+
+Kopiere eine ChatGPT-Antwort und füge sie hier ein.
+
+JARVIS liest sie dir auf Deutsch vor.
+
+</p>
+
+<textarea id="answer" placeholder="ChatGPT-Antwort hier einfügen …"></textarea>
+
+<div class="row">
+
+<button id="paste" class="secondary">📋 Einfügen</button>
+
+<button id="read" class="green">🔊 Vorlesen</button>
+
+</div>
+
+<div class="row">
+
+<button id="pause" class="secondary">⏸️ Pause</button>
+
+<button id="resume" class="secondary">▶️ Weiter</button>
+
+<button id="stopRead" class="secondary">⏹️ Stoppen</button>
+
+</div>
+
+<p id="readStatus" role="status">Vorlesefunktion bereit.</p>
+
+</section>
+
+<section class="panel">
+
+<h2>📝 NOTIZEN</h2>
 
 <textarea id="notes" placeholder="Deine Notizen …"></textarea>
 
 <div class="row">
 
-<button id="saveNotes">💾 Notizen speichern</button>
+<button id="saveNotes">💾 Speichern</button>
 
-<button id="clearNotes" class="secondary">Löschen</button>
+<button id="deleteNotes" class="secondary">Löschen</button>
 
 </div>
 
@@ -194,7 +282,7 @@ a{color:#a8e5ff}
 
 <div class="row">
 
-<input id="newTask" placeholder="Neue Aufgabe …" aria-label="Neue Aufgabe">
+<input id="newTask" placeholder="Neue Aufgabe …">
 
 <button id="addTask">+ Hinzufügen</button>
 
@@ -208,33 +296,59 @@ a{color:#a8e5ff}
 
 <h2>⏱️ TIMER</h2>
 
+<label for="minutes">Minuten</label>
+
+<input id="minutes" type="number" min="1" max="240" value="5">
+
 <div class="row">
 
-<input id="minutes" type="number" min="1" max="240" value="5" aria-label="Minuten">
+<button id="startTimer">⏱️ Starten</button>
 
-<button id="startTimer">Timer starten</button>
-
-<button id="cancelTimer" class="secondary">Stoppen</button>
+<button id="stopTimer" class="secondary">Stoppen</button>
 
 </div>
 
-<p id="timerInfo" class="muted">Kein Timer aktiv. Die Seite muss aktiv bleiben.</p>
+<p id="timerInfo" class="small">Kein Timer aktiv.</p>
 
 </section>
 
 <section class="panel">
 
-<h2>📜 LETZTE FRAGEN</h2>
+<h2>⚙️ SYSTEMSTATUS</h2>
 
-<ul id="history"><li>Noch keine Fragen.</li></ul>
+<p class="small">
+
+✓ Deutsche Sprachausgabe<br>
+
+✓ Spracherkennung, falls vom Browser unterstützt<br>
+
+✓ Telefon- und WhatsApp-Links<br>
+
+✓ KI-Antworten vorlesen<br>
+
+✓ Lokale Notizen und Aufgaben<br>
+
+○ Kein Zugriff auf eingehende WhatsApp-Nachrichten<br>
+
+○ Keine automatische KI-Verbindung<br>
+
+○ Keine Steuerung sämtlicher iPhone-Apps
+
+</p>
 
 </section>
 
-<footer>JARVIS CONTROL V1000 · Kostenlos · Ohne API-Schlüssel</footer>
+<footer>
+
+JARVIS V5000 · PRIVATE CONTROL CENTER<br>
+
+Keine Passwörter oder vertraulichen Daten in GitHub-Code eintragen.
+
+</footer>
 
 </main>
 
-<button id="mic" type="button">🎙️ Mit JARVIS sprechen</button>
+<button id="mic">🎙️ Mit JARVIS sprechen</button>
 
 <script>
 
@@ -242,249 +356,461 @@ a{color:#a8e5ff}
 
 const $ = id => document.getElementById(id);
 
-const status = msg => $('status').textContent = msg;
+const status = text => $('status').textContent = text;
 
-function speak(msg) {
+function speak(text) {
 
-  if (!('speechSynthesis' in window)) {
+ if (!('speechSynthesis' in window)) {
 
-    status('Sprachausgabe nicht verfügbar.');
+   status('Sprachausgabe nicht unterstützt.');
 
-    return;
+   return;
 
-  }
+ }
 
-  speechSynthesis.cancel();
+ speechSynthesis.cancel();
 
-  const u = new SpeechSynthesisUtterance(msg);
+ const u = new SpeechSynthesisUtterance(text);
 
-  u.lang = 'de-DE';
+ u.lang = 'de-DE';
 
-  u.rate = 0.92;
+ u.rate = 0.92;
 
-  speechSynthesis.speak(u);
-
-}
-
-function tick() {
-
-  const now = new Date();
-
-  $('clock').textContent = now.toLocaleTimeString('de-DE');
-
-  $('date').textContent = now.toLocaleDateString('de-DE', {
-
-    weekday:'long',day:'numeric',month:'long',year:'numeric'
-
-  });
+ speechSynthesis.speak(u);
 
 }
 
-tick();
+function updateClock() {
 
-setInterval(tick,1000);
+ const now = new Date();
 
-const history = [];
+ $('clock').textContent = now.toLocaleTimeString('de-DE');
 
-function remember(q) {
+ $('date').textContent = now.toLocaleDateString('de-DE',{
 
-  if (!q) return;
+   weekday:'long',day:'numeric',month:'long',year:'numeric'
 
-  history.unshift(q);
-
-  history.splice(5);
-
-  $('history').replaceChildren();
-
-  history.forEach(x => {
-
-    const li = document.createElement('li');
-
-    li.textContent = x;
-
-    $('history').append(li);
-
-  });
+ });
 
 }
 
-async function copyQuestion() {
+updateClock();
 
-  const q = $('question').value.trim();
-
-  if (!q) {
-
-    status('Bitte zuerst eine Frage eingeben.');
-
-    return;
-
-  }
-
-  try {
-
-    await navigator.clipboard.writeText(q);
-
-    status('Frage kopiert. In ChatGPT einfügen.');
-
-  } catch {
-
-    status('Bitte die Frage manuell kopieren.');
-
-  }
-
-}
-
-$('ask').onclick = () => {
-
-  const q = $('question').value.trim();
-
-  if (!q) {
-
-    status('Bitte zuerst eine Frage eingeben.');
-
-    return;
-
-  }
-
-  remember(q);
-
-  window.open('https://chatgpt.com/','_blank');
-
-  void copyQuestion();
-
-};
-
-$('copy').onclick = () => void copyQuestion();
-
-$('clear').onclick = () => {
-
-  $('question').value = '';
-
-  status('Frage gelöscht.');
-
-};
+setInterval(updateClock,1000);
 
 $('greet').onclick = () =>
 
-  speak('Guten Tag. Ich bin Jarvis Version eintausend. Deine Steuerzentrale ist bereit.');
+ speak('Guten Tag. Ich bin Jarvis Version fünftausend. Dein Kontrollzentrum ist bereit.');
 
-$('stopSpeech').onclick = () => {
+$('stopVoice').onclick = () => {
 
-  if ('speechSynthesis' in window) speechSynthesis.cancel();
+ if ('speechSynthesis' in window) speechSynthesis.cancel();
 
-  status('Stimme gestoppt.');
+ status('Stimme gestoppt.');
 
 };
 
-function loadTasks() {
+// TELEFON
 
-  try {
+function validPhone(raw) {
 
-    return JSON.parse(localStorage.getItem('jarvis1000_tasks') || '[]');
+ const clean = raw.replace(/[\s()-]/g,'');
 
-  } catch {
-
-    return [];
-
-  }
+ return /^\+?[0-9]{6,15}$/.test(clean) ? clean : '';
 
 }
 
-let tasks = loadTasks();
+$('call').onclick = () => {
 
-function renderTasks() {
+ const number = validPhone($('phone').value);
 
-  $('tasks').replaceChildren();
+ if (!number) {
 
-  tasks.forEach((t,i) => {
+   status('Bitte eine gültige Telefonnummer eingeben.');
 
-    const li = document.createElement('li');
+   return;
 
-    const line = document.createElement('div');
+ }
 
-    const check = document.createElement('input');
+ window.location.href = 'tel:' + number;
 
-    const span = document.createElement('span');
+};
 
-    const del = document.createElement('button');
+// WHATSAPP
 
-    line.className = 'taskline';
+function whatsappNumber(raw) {
 
-    check.type = 'checkbox';
+ const n = validPhone(raw);
 
-    check.checked = !!t.done;
+ if (!n) return '';
 
-    check.onchange = () => {
-
-      tasks[i].done = check.checked;
-
-      saveTasks();
-
-    };
-
-    span.textContent = t.text;
-
-    if (t.done) span.className = 'done';
-
-    del.textContent = '✕';
-
-    del.className = 'secondary';
-
-    del.onclick = () => {
-
-      tasks.splice(i,1);
-
-      saveTasks();
-
-    };
-
-    line.append(check,span,del);
-
-    li.append(line);
-
-    $('tasks').append(li);
-
-  });
-
-  if (!tasks.length) {
-
-    const li = document.createElement('li');
-
-    li.textContent = 'Noch keine Aufgaben.';
-
-    $('tasks').append(li);
-
-  }
+ return n.replace(/^\+/,'');
 
 }
+
+$('openWA').onclick = () => {
+
+ const number = whatsappNumber($('waPhone').value);
+
+ const message = $('waMessage').value.trim();
+
+ if (!number) {
+
+   status('Bitte WhatsApp-Nummer mit Landesvorwahl eingeben.');
+
+   return;
+
+ }
+
+ if (!message) {
+
+   status('Bitte eine WhatsApp-Nachricht schreiben.');
+
+   return;
+
+ }
+
+ window.location.href =
+
+   'https://wa.me/' + number +
+
+   '?text=' + encodeURIComponent(message);
+
+};
+
+$('shareWA').onclick = () => {
+
+ const message = $('waMessage').value.trim();
+
+ if (!message) {
+
+   status('Bitte zuerst eine Nachricht schreiben.');
+
+   return;
+
+ }
+
+ window.location.href =
+
+   'https://wa.me/?text=' + encodeURIComponent(message);
+
+};
+
+// CHATGPT
+
+async function copyQuestion() {
+
+ const q = $('question').value.trim();
+
+ if (!q) {
+
+   status('Bitte zuerst eine Frage schreiben.');
+
+   return;
+
+ }
+
+ try {
+
+   await navigator.clipboard.writeText(q);
+
+   status('Frage kopiert.');
+
+ } catch {
+
+   status('Bitte die Frage manuell kopieren.');
+
+ }
+
+}
+
+$('copyQuestion').onclick = copyQuestion;
+
+$('ask').onclick = () => {
+
+ const q = $('question').value.trim();
+
+ window.open('https://chatgpt.com/','_blank','noopener');
+
+ if (q) void copyQuestion();
+
+};
+
+// KI-ANTWORT VORLESEN
+
+let readSession = 0;
+
+$('paste').onclick = async () => {
+
+ try {
+
+   const text = await navigator.clipboard.readText();
+
+   if (!text.trim()) {
+
+     $('readStatus').textContent = 'Keine kopierte Antwort gefunden.';
+
+     return;
+
+   }
+
+   $('answer').value = text;
+
+   $('readStatus').textContent = 'Antwort eingefügt.';
+
+ } catch {
+
+   $('readStatus').textContent =
+
+     'Textfeld gedrückt halten und Einfügen wählen.';
+
+   $('answer').focus();
+
+ }
+
+};
+
+$('read').onclick = () => {
+
+ const text = $('answer').value.trim();
+
+ if (!text) {
+
+   $('readStatus').textContent = 'Bitte zuerst eine Antwort einfügen.';
+
+   return;
+
+ }
+
+ if (!('speechSynthesis' in window)) {
+
+   $('readStatus').textContent = 'Sprachausgabe nicht verfügbar.';
+
+   return;
+
+ }
+
+ readSession++;
+
+ const session = readSession;
+
+ speechSynthesis.cancel();
+
+ // Kurze Abschnitte helfen bei längeren Antworten.
+
+ const chunks = text.match(/[\s\S]{1,160}/g) || [];
+
+ let index = 0;
+
+ function next() {
+
+   if (session !== readSession) return;
+
+   if (index >= chunks.length) {
+
+     $('readStatus').textContent = 'Antwort fertig vorgelesen.';
+
+     return;
+
+   }
+
+   const u = new SpeechSynthesisUtterance(chunks[index++]);
+
+   u.lang = 'de-DE';
+
+   u.rate = 0.92;
+
+   u.onend = next;
+
+   u.onerror = e => {
+
+     if (session !== readSession) return;
+
+     if (e.error === 'canceled' || e.error === 'interrupted') return;
+
+     $('readStatus').textContent =
+
+       'Vorlesen unterbrochen. Bitte erneut starten.';
+
+   };
+
+   speechSynthesis.speak(u);
+
+ }
+
+ $('readStatus').textContent = 'JARVIS liest vor …';
+
+ next();
+
+};
+
+$('pause').onclick = () => {
+
+ if ('speechSynthesis' in window) speechSynthesis.pause();
+
+ $('readStatus').textContent = 'Pausiert.';
+
+};
+
+$('resume').onclick = () => {
+
+ if ('speechSynthesis' in window) speechSynthesis.resume();
+
+ $('readStatus').textContent = 'JARVIS liest weiter …';
+
+};
+
+$('stopRead').onclick = () => {
+
+ readSession++;
+
+ if ('speechSynthesis' in window) speechSynthesis.cancel();
+
+ $('readStatus').textContent = 'Vorlesen gestoppt.';
+
+};
+
+// NOTIZEN
+
+try {
+
+ $('notes').value = localStorage.getItem('jarvis1000_notes') || '';
+
+} catch {}
+
+$('saveNotes').onclick = () => {
+
+ try {
+
+   localStorage.setItem('jarvis1000_notes',$('notes').value);
+
+   status('Notizen gespeichert.');
+
+ } catch {
+
+   status('Speichern nicht möglich.');
+
+ }
+
+};
+
+$('deleteNotes').onclick = () => {
+
+ if (!confirm('Notizen wirklich löschen?')) return;
+
+ $('notes').value = '';
+
+ try {localStorage.removeItem('jarvis1000_notes');} catch {}
+
+ status('Notizen gelöscht.');
+
+};
+
+// AUFGABEN
+
+let tasks = [];
+
+try {
+
+ const saved = JSON.parse(localStorage.getItem('jarvis1000_tasks') || '[]');
+
+ if (Array.isArray(saved)) tasks = saved;
+
+} catch {}
 
 function saveTasks() {
 
-  try {
+ try {
 
-    localStorage.setItem('jarvis1000_tasks',JSON.stringify(tasks));
+   localStorage.setItem('jarvis1000_tasks',JSON.stringify(tasks));
 
-  } catch {
+ } catch {
 
-    status('Aufgaben konnten nicht gespeichert werden.');
+   status('Aufgaben konnten nicht gespeichert werden.');
 
-  }
+ }
 
-  renderTasks();
+ renderTasks();
+
+}
+
+function renderTasks() {
+
+ $('tasks').replaceChildren();
+
+ if (!tasks.length) {
+
+   const li = document.createElement('li');
+
+   li.textContent = 'Noch keine Aufgaben.';
+
+   $('tasks').append(li);
+
+ }
+
+ tasks.forEach((task,i) => {
+
+   const li = document.createElement('li');
+
+   const line = document.createElement('div');
+
+   const check = document.createElement('input');
+
+   const span = document.createElement('span');
+
+   const del = document.createElement('button');
+
+   line.className = 'taskline';
+
+   check.type = 'checkbox';
+
+   check.checked = !!task.done;
+
+   check.onchange = () => {
+
+     tasks[i].done = check.checked;
+
+     saveTasks();
+
+   };
+
+   span.textContent = task.text;
+
+   if (task.done) span.className = 'done';
+
+   del.textContent = '✕';
+
+   del.className = 'secondary';
+
+   del.onclick = () => {
+
+     tasks.splice(i,1);
+
+     saveTasks();
+
+   };
+
+   line.append(check,span,del);
+
+   li.append(line);
+
+   $('tasks').append(li);
+
+ });
 
 }
 
 function addTask(text) {
 
-  text = text.trim();
+ text = text.trim();
 
-  if (!text) return;
+ if (!text) return;
 
-  tasks.push({text,done:false});
+ tasks.push({text,done:false});
 
-  saveTasks();
+ $('newTask').value = '';
 
-  $('newTask').value = '';
+ saveTasks();
 
 }
 
@@ -492,241 +818,227 @@ $('addTask').onclick = () => addTask($('newTask').value);
 
 $('newTask').onkeydown = e => {
 
-  if (e.key === 'Enter') addTask($('newTask').value);
+ if (e.key === 'Enter') addTask($('newTask').value);
 
 };
 
 renderTasks();
 
-try {
-
-  $('notes').value = localStorage.getItem('jarvis1000_notes') || '';
-
-} catch {}
-
-$('saveNotes').onclick = () => {
-
-  try {
-
-    localStorage.setItem('jarvis1000_notes',$('notes').value);
-
-    status('Notizen gespeichert.');
-
-  } catch {
-
-    status('Notizen konnten nicht gespeichert werden.');
-
-  }
-
-};
-
-$('clearNotes').onclick = () => {
-
-  if (confirm('Notizen wirklich löschen?')) {
-
-    $('notes').value = '';
-
-    try {
-
-      localStorage.removeItem('jarvis1000_notes');
-
-    } catch {}
-
-    status('Notizen gelöscht.');
-
-  }
-
-};
+// TIMER
 
 let timerHandle = null;
 
 function stopTimer() {
 
-  if (timerHandle) clearInterval(timerHandle);
+ if (timerHandle) clearInterval(timerHandle);
 
-  timerHandle = null;
+ timerHandle = null;
 
-  $('timerInfo').textContent = 'Kein Timer aktiv.';
+ $('timerInfo').textContent = 'Kein Timer aktiv.';
 
 }
 
-function startTimer(n) {
+function startTimer(minutes) {
 
-  if (!Number.isFinite(n) || n < 1 || n > 240) {
+ if (!Number.isFinite(minutes) || minutes < 1 || minutes > 240) {
 
-    status('Bitte 1 bis 240 Minuten wählen.');
+   status('Timer: 1 bis 240 Minuten eingeben.');
 
-    return;
+   return;
 
-  }
+ }
 
-  stopTimer();
+ stopTimer();
 
-  const end = Date.now() + n * 60000;
+ const end = Date.now() + minutes * 60000;
 
-  function update() {
+ function tickTimer() {
 
-    const left = Math.max(0,Math.ceil((end-Date.now())/1000));
+   const remaining = Math.max(0,Math.ceil((end-Date.now())/1000));
 
-    $('timerInfo').textContent =
+   $('timerInfo').textContent =
 
-      'Verbleibend: ' + Math.floor(left/60) +
+     Math.floor(remaining/60) + ' Minuten ' +
 
-      ' min ' + String(left%60).padStart(2,'0') + ' s';
+     String(remaining%60).padStart(2,'0') + ' Sekunden';
 
-    if (left === 0) {
+   if (remaining === 0) {
 
-      stopTimer();
+     stopTimer();
 
-      status('Timer abgelaufen!');
+     speak('Dein Timer ist abgelaufen.');
 
-      speak('Dein Timer ist abgelaufen.');
+   }
 
-    }
+ }
 
-  }
+ tickTimer();
 
-  update();
+ timerHandle = setInterval(tickTimer,1000);
 
-  timerHandle = setInterval(update,1000);
-
-  status('Timer gestartet.');
+ status('Timer gestartet.');
 
 }
 
 $('startTimer').onclick = () =>
 
-  startTimer(Number($('minutes').value));
+ startTimer(Number($('minutes').value));
 
-$('cancelTimer').onclick = stopTimer;
+$('stopTimer').onclick = stopTimer;
+
+// SPRACHSTEUERUNG
 
 let recognition = null;
 
 function listen() {
 
-  const R = window.SpeechRecognition || window.webkitSpeechRecognition;
+ const Recognition =
 
-  if (!R) {
+   window.SpeechRecognition || window.webkitSpeechRecognition;
 
-    status('Spracherkennung nicht unterstützt. Nutze das iPhone-Tastaturmikrofon.');
+ if (!Recognition) {
 
-    return;
+   status('Spracherkennung nicht verfügbar. Nutze das Tastaturmikrofon.');
 
-  }
+   return;
 
-  if (recognition) {
+ }
 
-    recognition.stop();
+ if (recognition) {
 
-    return;
+   recognition.stop();
 
-  }
+   return;
 
-  const r = new R();
+ }
 
-  recognition = r;
+ const r = new Recognition();
 
-  r.lang = 'de-DE';
+ recognition = r;
 
-  r.interimResults = false;
+ r.lang = 'de-DE';
 
-  r.onresult = e => {
+ r.interimResults = false;
 
-    const spoken = e.results[0][0].transcript.trim();
+ r.onresult = e => {
 
-    const c = spoken.toLocaleLowerCase('de-DE');
+   const spoken = e.results[0][0].transcript.trim();
 
-    status('Erkannt: ' + spoken);
+   const command = spoken.toLocaleLowerCase('de-DE');
 
-    if (/hallo|guten tag/.test(c)) {
+   status('Erkannt: ' + spoken);
 
-      speak('Hallo! Jarvis ist bereit.');
+   if (/hallo|guten tag/.test(command)) {
 
-    }
+     speak('Hallo! Jarvis ist bereit.');
 
-    else if (/uhrzeit|wie spät/.test(c)) {
+   }
 
-      speak('Es ist ' + new Date().toLocaleTimeString('de-DE',{
+   else if (/uhrzeit|wie spät/.test(command)) {
 
-        hour:'2-digit',minute:'2-digit'
+     speak('Es ist ' + new Date().toLocaleTimeString('de-DE',{
 
-      }) + ' Uhr.');
+       hour:'2-digit',minute:'2-digit'
 
-    }
+     }) + ' Uhr.');
 
-    else if (/datum|welcher tag/.test(c)) {
+   }
 
-      speak('Heute ist ' + new Date().toLocaleDateString('de-DE',{
+   else if (/datum|welcher tag/.test(command)) {
 
-        dateStyle:'full'
+     speak('Heute ist ' + new Date().toLocaleDateString('de-DE',{
 
-      }));
+       dateStyle:'full'
 
-    }
+     }));
 
-    else if (c.startsWith('notiz ')) {
+   }
 
-      const text = spoken.slice(6).trim();
+   else if (command.startsWith('notiz ')) {
 
-      $('notes').value += ($('notes').value ? '\n' : '') + text;
+     $('notes').value +=
 
-      status('Notiz übernommen. Bitte speichern.');
+       ($('notes').value ? '\n' : '') + spoken.slice(6);
 
-      speak('Notiz übernommen.');
+     status('Notiz übernommen. Bitte speichern.');
 
-    }
+     speak('Notiz übernommen.');
 
-    else if (c.startsWith('aufgabe ')) {
+   }
 
-      addTask(spoken.slice(8));
+   else if (command.startsWith('aufgabe ')) {
 
-      speak('Aufgabe hinzugefügt.');
+     addTask(spoken.slice(8));
 
-    }
+     speak('Aufgabe hinzugefügt.');
 
-    else {
+   }
 
-      $('question').value = spoken;
+   else if (command.includes('whatsapp')) {
 
-      remember(spoken);
+     $('waMessage').value = spoken;
 
-      status('Frage notiert. Öffne ChatGPT für die Antwort.');
+     status('WhatsApp-Bereich öffnen und Nachricht prüfen.');
 
-      speak('Ich habe deine Frage notiert. Öffne ChatGPT für die Antwort.');
+     speak('Ich habe den WhatsApp-Bereich vorbereitet.');
 
-    }
+   }
 
-  };
+   else if (command.includes('anrufen') ||
 
-  r.onerror = e => status('Mikrofonfehler: ' + e.error);
+            command.includes('ruf an')) {
 
-  r.onend = () => {
+     status('Bitte Telefonnummer im Telefon-Bereich eingeben.');
 
-    recognition = null;
+     speak('Gib die Telefonnummer ein und bestätige den Anruf.');
 
-    $('mic').classList.remove('active');
+   }
 
-    $('mic').textContent = '🎙️ Mit JARVIS sprechen';
+   else {
 
-  };
+     $('question').value = spoken;
 
-  try {
+     status('Frage notiert. Öffne ChatGPT für die Antwort.');
 
-    r.start();
+     speak('Ich habe deine Frage notiert.');
 
-    $('mic').classList.add('active');
+   }
 
-    $('mic').textContent = '🔴 Zuhören – stoppen';
+ };
 
-    status('Ich höre zu …');
+ r.onerror = e => {
 
-  } catch {
+   status('Mikrofonfehler: ' + e.error);
 
-    recognition = null;
+ };
 
-    status('Mikrofon konnte nicht gestartet werden.');
+ r.onend = () => {
 
-  }
+   recognition = null;
+
+   $('mic').classList.remove('active');
+
+   $('mic').textContent = '🎙️ Mit JARVIS sprechen';
+
+ };
+
+ try {
+
+   r.start();
+
+   $('mic').classList.add('active');
+
+   $('mic').textContent = '🔴 Zuhören – stoppen';
+
+   status('JARVIS hört zu …');
+
+ } catch {
+
+   recognition = null;
+
+   status('Mikrofon konnte nicht gestartet werden.');
+
+ }
 
 }
 
