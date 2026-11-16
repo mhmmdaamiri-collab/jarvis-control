@@ -1,91 +1,383 @@
-<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#06111e"><title>JARVIS CONTROL</title><style>*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 20%,#143a5a,#071725 48%,#030911);color:#e9f7ff;font:16px -apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh}.wrap{max-width:540px;margin:auto;padding:28px 18px 60px}header{display:flex;justify-content:space-between;align-items:center;color:#77d6ff;letter-spacing:2px;font-size:11px}.status{color:#81e7bf}.orb{height:180px;width:180px;border-radius:50%;border:2px solid #58c9ff;box-shadow:0 0 35px #0797ff66,inset 0 0 35px #0797ff66;margin:35px auto 22px;display:grid;place-items:center;position:relative}.orb:after{content:'';position:absolute;inset:12px;border:1px dashed #61cfff;border-radius:50%;opacity:.7}.orb span{font-size:64px;color:#b1edff;text-shadow:0 0 20px #00b7ff}h1{text-align:center;letter-spacing:6px;font-size:26px;margin:8px 0}p.lead{text-align:center;color:#a4c5d9;font-size:13px;line-height:1.6}.panel{border:1px solid #235276;background:#0b2134b8;border-radius:18px;padding:18px;margin-top:24px}h2{font-size:12px;letter-spacing:2px;color:#81d6ff;margin:0 0 16px}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.service{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:9px;min-height:98px;text-decoration:none;color:white;background:#11334c;border:1px solid #285b7b;border-radius:14px;font-weight:650;font-size:13px}.service i{font-style:normal;font-size:28px}.service:active,button:active{transform:scale(.98)}label{display:block;font-size:12px;color:#b4d6e8;margin:12px 0 8px}textarea{width:100%;min-height:110px;resize:vertical;border-radius:12px;border:1px solid #356b8a;background:#061522;color:#fff;padding:12px;font:inherit}button{background:#35b8f3;border:0;border-radius:12px;padding:12px 16px;color:#031624;font-weight:700;font-size:14px;cursor:pointer}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.secondary{background:#173e59;color:#cceeff}.small{font-size:12px;color:#96b5c9;line-height:1.55}.notice{font-size:12px;color:#b1c9d9;margin-top:24px;line-height:1.6}footer{text-align:center;color:#587b95;font-size:11px;margin-top:30px}</style></head><body><div class="wrap"><header><span>JARVIS / CONTROL</span><span class="status">● LOKAL BEREIT</span></header><div class="orb"><span>J</span></div><h1>J.A.R.V.I.S.</h1><p class="lead">Guten Tag. Deine persönliche KI-Steuerzentrale ist bereit.</p><section class="panel"><h2>KI-SYSTEME STARTEN</h2><div class="services"><a class="service" href="https://chatgpt.com/" target="_blank" rel="noopener"><i>✳</i>ChatGPT</a><a class="service" href="https://claude.ai/" target="_blank" rel="noopener"><i>✺</i>Claude</a><a class="service" href="https://gemini.google.com/" target="_blank" rel="noopener"><i>✦</i>Gemini</a></div><p class="small">Die Schaltflächen öffnen die offiziellen Webdienste. Es besteht noch keine direkte KI-zu-KI-Verbindung.</p></section><section class="panel"><h2>AUFGABE VORBEREITEN</h2><label for="task">Was soll Jarvis für dich tun?</label><textarea id="task" placeholder="Beispiel: Plane meinen morgigen Tag und erstelle eine Checkliste."></textarea><div class="actions"><button id="copy">Jarvis-Auftrag kopieren</button><button id="speak" class="secondary">🔊 Begrüßung</button></div><p id="feedback" class="small" role="status">Kopiere den Auftrag und füge ihn in eine der KI-Apps ein.</p></section><section class="panel"><h2>SYSTEMSTATUS</h2><p class="small">✓ Steuerzentrale geladen<br>✓ Drei KI-Webdienste verlinkt<br>○ Automatischer KI-Austausch: noch nicht aktiviert<br>○ Laptop-Agent: später<br>○ Cloud-Synchronisation: später</p></section><p class="notice">🔒 Keine Anmeldung oder API-Schlüssel in dieser Steuerzentrale erforderlich. Aufgaben werden nur beim Kopieren in die Zwischenablage übernommen. Gib keine Passwörter oder vertraulichen Daten in öffentliche Repositories ein.</p><footer>JARVIS CONTROL V1 · KOSTENLOSE STARTVERSION</footer></div><script>const t=document.getElementById('task'),f=document.getElementById('feedback');document.getElementById('copy').onclick=async()=>{if(!t.value.trim()){f.textContent='Bitte zuerst eine Aufgabe eingeben.';return}const s='Du bist JARVIS, mein persönlicher deutschsprachiger KI-Assistent. Antworte ruhig, professionell und verständlich. Führe nur Aktionen aus, die du wirklich ausführen kannst. Meine Aufgabe: '+t.value.trim();try{await navigator.clipboard.writeText(s);f.textContent='✓ Auftrag kopiert. Öffne jetzt eine der drei KI-Apps und füge ihn ein.'}catch{f.textContent='Kopieren nicht möglich. Markiere und kopiere deinen Text manuell.'}};document.getElementById('speak').onclick=()=>{if(!('speechSynthesis' in window)){f.textContent='Sprachausgabe ist hier nicht verfügbar.';return}const u=new SpeechSynthesisUtterance('Guten Tag. Ich bin Jarvis. Deine Steuerzentrale ist bereit.');u.lang='de-DE';u.rate=.9;u.pitch=.85;speechSynthesis.cancel();speechSynthesis.speak(u)};</script></body></html
 
-<button id="jarvis-mic" type="button" onclick="jarvisListen()" style="position:fixed;bottom:24px;right:20px;padding:16px;border-radius:40px;background:#087ec1;color:white;border:1px solid #62caff;z-index:9999">
 
-🎙️ Mit JARVIS sprechen
+<!DOCTYPE html>
 
-</button>
+<html lang="de">
 
-<script>
+<head>
 
-function jarvisSay(message) {
+<meta charset="UTF-8">
 
-  if (!("speechSynthesis" in window)) return;
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  speechSynthesis.cancel();
+<title>JARVIS CONTROL V2</title>
 
-  const voice = new SpeechSynthesisUtterance(message);
+<style>
 
-  voice.lang = "de-DE";
+*{box-sizing:border-box}
 
-  voice.rate = 0.9;
+body{
 
-  speechSynthesis.speak(voice);
+  margin:0;
+
+  min-height:100vh;
+
+  background:radial-gradient(circle at top,#16476b,#071725 55%,#02070d);
+
+  color:#e8f8ff;
+
+  font-family:-apple-system,BlinkMacSystemFont,Arial,sans-serif;
 
 }
 
-function jarvisListen() {
+main{max-width:540px;margin:auto;padding:25px 18px 110px}
 
-  const Recognition = window.SpeechRecognition ||
+header{display:flex;justify-content:space-between;font-size:11px;letter-spacing:1px;color:#80d8ff}
 
-                      window.webkitSpeechRecognition;
+.status{color:#7de3b1}
 
-  if (!Recognition) {
+.orb{
 
-    jarvisSay("Die Spracherkennung wird in diesem Browser nicht unterstützt.");
+  width:170px;height:170px;margin:38px auto 20px;
 
-    alert("Spracherkennung nicht verfügbar. Bitte versuche Safari.");
+  border:2px solid #54cbff;border-radius:50%;
+
+  display:grid;place-items:center;
+
+  box-shadow:0 0 45px #008cff88,inset 0 0 35px #008cff55;
+
+  font-size:75px;color:#a6eaff;
+
+}
+
+h1{text-align:center;letter-spacing:5px}
+
+.subtitle{text-align:center;color:#a8c9db;font-size:14px}
+
+.panel{
+
+  margin-top:24px;padding:18px;border-radius:18px;
+
+  background:#0b2336;border:1px solid #286083;
+
+}
+
+h2{font-size:13px;letter-spacing:2px;color:#83d8ff}
+
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+
+.services a{
+
+  text-decoration:none;text-align:center;color:white;
+
+  padding:22px 5px;background:#153b56;
+
+  border:1px solid #326b8e;border-radius:13px;
+
+  font-size:13px;font-weight:bold;
+
+}
+
+textarea{
+
+  width:100%;min-height:110px;padding:12px;
+
+  border-radius:12px;background:#061522;color:white;
+
+  border:1px solid #377394;font:inherit;
+
+}
+
+button{
+
+  border:0;border-radius:12px;padding:13px 16px;
+
+  background:#36b9f4;color:#031624;
+
+  font-weight:bold;font-size:14px;cursor:pointer;
+
+}
+
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+
+.secondary{background:#194762;color:#e1f7ff}
+
+.small{font-size:12px;color:#afcad9;line-height:1.6}
+
+#mic{
+
+  position:fixed;bottom:22px;left:50%;
+
+  transform:translateX(-50%);
+
+  width:min(90%,350px);padding:18px;
+
+  border:1px solid #87e2ff;border-radius:40px;
+
+  background:#078bcf;color:white;
+
+  box-shadow:0 0 25px #009cff66;
+
+  z-index:999;
+
+}
+
+#feedback{margin-top:12px;color:#a9e7ff}
+
+footer{text-align:center;margin-top:35px;font-size:11px;color:#7392a7}
+
+</style>
+
+</head>
+
+<body>
+
+<main>
+
+<header>
+
+<span>JARVIS / CONTROL</span>
+
+<span class="status">● SYSTEM BEREIT</span>
+
+</header>
+
+<div class="orb">J</div>
+
+<h1>J.A.R.V.I.S.</h1>
+
+<p class="subtitle">Deine persönliche KI-Steuerzentrale</p>
+
+<section class="panel">
+
+<h2>KI-SYSTEME</h2>
+
+<div class="services">
+
+<a href="https://chatgpt.com/" target="_blank">✳<br>ChatGPT</a>
+
+<a href="https://claude.ai/" target="_blank">✺<br>Claude</a>
+
+<a href="https://gemini.google.com/" target="_blank">✦<br>Gemini</a>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>JARVIS SPRACHSTEUERUNG</h2>
+
+<p class="small">Tippe unten auf das Mikrofon und sage „Hallo“, „Uhrzeit“ oder „ChatGPT“.</p>
+
+<div class="actions">
+
+<button class="secondary" onclick="jarvisSay('Guten Tag. Ich bin Jarvis. Dein System ist bereit.')">🔊 Begrüßung abspielen</button>
+
+</div>
+
+<p id="feedback" role="status">Bereit für deinen Befehl.</p>
+
+</section>
+
+<section class="panel">
+
+<h2>AUFGABE VORBEREITEN</h2>
+
+<textarea id="task" placeholder="Was soll JARVIS für dich tun?"></textarea>
+
+<div class="actions">
+
+<button onclick="copyTask()">Auftrag kopieren</button>
+
+</div>
+
+</section>
+
+<section class="panel">
+
+<h2>SYSTEMSTATUS</h2>
+
+<p class="small">
+
+✓ Steuerzentrale geladen<br>
+
+✓ Drei KI-Dienste verlinkt<br>
+
+✓ Sprachausgabe vorbereitet<br>
+
+○ Spracherkennung abhängig vom Browser<br>
+
+○ Direkte KI-Verbindung noch nicht eingerichtet
+
+</p>
+
+</section>
+
+<footer>JARVIS CONTROL V2</footer>
+
+</main>
+
+<button id="mic" onclick="jarvisListen()">🎙️ Mit JARVIS sprechen</button>
+
+<script>
+
+function setFeedback(message){
+
+  document.getElementById("feedback").textContent=message;
+
+}
+
+function jarvisSay(message){
+
+  if(!("speechSynthesis" in window)){
+
+    setFeedback("Sprachausgabe nicht unterstützt.");
 
     return;
 
   }
 
-  const recognition = new Recognition();
+  speechSynthesis.cancel();
 
-  recognition.lang = "de-DE";
+  const speech=new SpeechSynthesisUtterance(message);
 
-  recognition.onresult = function(event) {
+  speech.lang="de-DE";
 
-    const command = event.results[0][0].transcript.toLowerCase();
+  speech.rate=0.9;
 
-    if (command.includes("uhrzeit") || command.includes("wie spät")) {
+  speechSynthesis.speak(speech);
 
-      jarvisSay("Es ist " + new Date().toLocaleTimeString("de-DE", {
+}
 
-        hour: "2-digit",
+function jarvisListen(){
 
-        minute: "2-digit"
+  const Recognition=window.SpeechRecognition || window.webkitSpeechRecognition;
 
-      }) + " Uhr.");
+  if(!Recognition){
 
-    } else if (command.includes("hallo")) {
+    setFeedback("Spracherkennung wird von diesem Browser nicht unterstützt. Du kannst die Diktierfunktion der iPhone-Tastatur im Aufgabenfeld verwenden.");
+
+    return;
+
+  }
+
+  const recognition=new Recognition();
+
+  recognition.lang="de-DE";
+
+  recognition.interimResults=false;
+
+  recognition.maxAlternatives=1;
+
+  setFeedback("🎙️ Ich höre zu ...");
+
+  recognition.onresult=function(event){
+
+    const command=event.results[0][0].transcript.toLowerCase();
+
+    setFeedback("Erkannt: "+command);
+
+    if(command.includes("hallo")){
 
       jarvisSay("Hallo! JARVIS ist bereit.");
 
-    } else if (command.includes("chatgpt")) {
+    }
+
+    else if(command.includes("uhrzeit") || command.includes("wie spät")){
+
+      const time=new Date().toLocaleTimeString("de-DE",{
+
+        hour:"2-digit",minute:"2-digit"
+
+      });
+
+      jarvisSay("Es ist "+time+" Uhr.");
+
+    }
+
+    else if(command.includes("chatgpt")){
 
       jarvisSay("Ich öffne ChatGPT.");
 
-      window.location.href = "https://chatgpt.com";
+      window.open("https://chatgpt.com/","_blank");
 
-    } else {
+    }
 
-      jarvisSay("Ich habe verstanden: " + command);
+    else if(command.includes("claude")){
+
+      jarvisSay("Ich öffne Claude.");
+
+      window.open("https://claude.ai/","_blank");
+
+    }
+
+    else if(command.includes("gemini")){
+
+      jarvisSay("Ich öffne Gemini.");
+
+      window.open("https://gemini.google.com/","_blank");
+
+    }
+
+    else{
+
+      jarvisSay("Ich habe verstanden: "+command);
 
     }
 
   };
 
-  recognition.onerror = function() {
+  recognition.onerror=function(event){
 
-    alert("Spracherkennung fehlgeschlagen. Bitte Mikrofonberechtigung prüfen.");
+    setFeedback("Spracherkennung fehlgeschlagen: "+event.error);
 
   };
 
-  recognition.start();
+  try{
+
+    recognition.start();
+
+  }catch(error){
+
+    setFeedback("Mikrofon konnte nicht gestartet werden.");
+
+  }
 
 }
 
-</script></body>
+async function copyTask(){
+
+  const task=document.getElementById("task").value.trim();
+
+  if(!task){
+
+    setFeedback("Bitte zuerst eine Aufgabe eingeben.");
+
+    return;
+
+  }
+
+  try{
+
+    await navigator.clipboard.writeText(
+
+      "Du bist JARVIS, mein deutschsprachiger KI-Assistent. Meine Aufgabe: "+task
+
+    );
+
+    setFeedback("✓ Auftrag kopiert.");
+
+  }catch(error){
+
+    setFeedback("Kopieren nicht möglich. Bitte Text manuell kopieren.");
+
+  }
+
+}
+
+</script>
+
+</body>
 
 </html>
